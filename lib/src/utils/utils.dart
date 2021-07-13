@@ -24,7 +24,7 @@ String localeToString(Locale locale)
 }
 
 /// Translate the selected key into the currently selected locale
-String translate(String key, {Map<String, dynamic>? args, String rescue})
+String translate(String key, {Map<String, dynamic>? args, String? rescue})
 {
 	return Localization.instance.translate(key, args: args, rescue: rescue);
 }
