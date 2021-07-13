@@ -15,7 +15,7 @@ class Localization
         instance._translations = translations;
     }
 
-    String translate(String key, {Map<String, dynamic>? args, String rescue})
+    String translate(String key, {Map<String, dynamic>? args, String? rescue})
     {
         var translation = _getTranslation(key, _translations);
 
