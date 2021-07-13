@@ -15,7 +15,7 @@ class Localization
         instance._translations = translations;
     }
 
-    String translate(String key, {Map<String, dynamic>? args})
+    String translate(String key, {Map<String, dynamic>? args, String rescue})
     {
         var translation = _getTranslation(key, _translations);
 
@@ -24,7 +24,10 @@ class Localization
             translation = _assignArguments(translation, args);
         }
 
-        return translation ?? key;
+        if(rescue == null)
+            return translation ?? key;
+        else
+            return translation ?? rescue;
     }
 
     String plural(String key, num value, {Map<String, dynamic>? args})
